@@ -28,6 +28,7 @@ import { useTestConnector } from "./useTestConnector";
 // https://github.com/airbytehq/airbyte/issues/18553
 interface ConnectorCardBaseProps {
   title?: React.ReactNode;
+  description?: React.ReactNode;
   full?: boolean;
   jobInfo?: SynchronousJobRead | null;
   additionalSelectorComponent?: React.ReactNode;
@@ -60,6 +61,7 @@ interface ConnectorCardEditProps extends ConnectorCardBaseProps {
 
 export const ConnectorCard: React.FC<ConnectorCardCreateProps | ConnectorCardEditProps> = ({
   title,
+  description,
   full,
   jobInfo,
   onSubmit,
@@ -152,7 +154,7 @@ export const ConnectorCard: React.FC<ConnectorCardCreateProps | ConnectorCardEdi
   const formValues = isEditMode ? props.connector : { name: selectedConnectorDefinition?.name };
 
   return (
-    <Card title={title} fullWidth={full}>
+    <Card title={title} description={description} fullWidth={full}>
       <div className={styles.cardForm}>
         <div className={styles.connectorSelectControl}>
           <ConnectorDefinitionTypeControl

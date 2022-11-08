@@ -16,7 +16,9 @@
   }
 }
 
-.title {
+.header {
+  display: flex;
+  align-items: center;
   padding: variables.$spacing-xl;
   color: colors.$dark-blue;
   border-bottom: colors.$grey-100 variables.$border-thin solid;
@@ -32,4 +34,8 @@
   &.roundedBottom {
     border-radius: 10px;
   }
+}
+
+.infoTooltip {
+  color: white;
 }
