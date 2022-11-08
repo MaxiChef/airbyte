@@ -14,7 +14,6 @@ export const createPostgresSource = (
   cy.intercept("/api/v1/sources/create").as("createSource");
 
   goToSourcePage();
-  openNewSourceForm();
   fillPostgresForm(name, host, port, database, username, password);
   submitButtonClick();
 

@@ -7,7 +7,6 @@ export const createLocalJsonDestination = (name: string, destinationPath: string
   cy.intercept("/api/v1/destinations/create").as("createDestination");
 
   goToDestinationPage();
-  openNewDestinationForm();
   fillLocalJsonForm(name, destinationPath);
   submitButtonClick();
 
